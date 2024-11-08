@@ -7,12 +7,11 @@ import Home from "./pages/home";
 import Genres from "./pages/genres";
 import Movies from "./pages/movies";
 import MovieDetail from "./pages/movie-detail";
+import MoviesByGenre from "./pages/movies-by-genre";
 import Watchlist from "./pages/watchlist";
 import Watched from "./pages/watched";
 import Contact from "./pages/contact";
 import NotFound from "./pages/not-found";
-
-import MoviesByGenrePage from "./pages/movies-by-genre";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +24,7 @@ const router = createBrowserRouter([
       { path: "/watchlist", element: <Watchlist /> },
       { path: "/watched", element: <Watched /> },
       { path: "/genres", element: <Genres /> },
-      { path: "/genres/:id", element: <MoviesByGenrePage /> },
+      { path: "/genres/:id", element: <MoviesByGenre /> },
       { path: "/contact", element: <Contact /> },
       { path: "*", element: <NotFound /> },
     ],
