@@ -20,10 +20,10 @@ export default function Home() {
       const forYou = await Promise.all(
         watchedMovies.map(async (movie) => {
           const { results } = await tmdbApi(
-            `/${movie.type}/${movie.id}/similar`
+            `/${movie.resource_type}/${movie.id}/similar`
           );
 
-          return results.filter((movie) => movie.poster_path).slice(0, 4);
+          return results?.filter((movie) => movie?.poster_path).slice(0, 4);
         })
       );
 
