@@ -29,9 +29,7 @@ export default function MoviesByGenre() {
       <h1 className="text-2xl font-bold mb-4">{`Filmes de ${genre.name}`}</h1>
       <Section>
         {movies.length ? (
-          movies.map((movie) => (
-            <MovieCard key={movie.id} {...movie} detail /> // <div
-          ))
+          movies.map((movie) => <MovieCard key={movie.id} {...movie} detail />)
         ) : (
           <p>Nenhum filme encontrado para este gênero.</p>
         )}

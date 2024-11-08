@@ -33,7 +33,9 @@ export default function Movies() {
 
       <Section>
         {filteredMovies.length ? (
-          filteredMovies.map((movie) => <MovieCard key={movie.id} {...movie} />)
+          filteredMovies.map((movie) => (
+            <MovieCard key={movie.id} {...movie} detail />
+          ))
         ) : (
           <p className="text-center">Filme não encontrado</p>
         )}
