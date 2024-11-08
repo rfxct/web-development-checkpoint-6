@@ -19,7 +19,9 @@ export default function Home() {
     if (watchedMovies?.length) {
       const forYou = await Promise.all(
         watchedMovies.map(async (movie) => {
-          const { results } = await tmdbApi(`/movie/${movie.id}/similar`);
+          const { results } = await tmdbApi(
+            `/${movie.type}/${movie.id}/similar`
+          );
 
           return results.filter((movie) => movie.poster_path).slice(0, 4);
         })

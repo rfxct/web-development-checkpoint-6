@@ -34,7 +34,7 @@ export default function MovieDetail() {
         return alert("Filme já está na lista");
       }
 
-      setListByKey(listKey, [...items, movieData]);
+      setListByKey(listKey, [...items, { type, movieData }]);
       alert("Filme adicionado à lista");
     };
   }
