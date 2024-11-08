@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 import tmdbApi from "../services/tmdb-api";
 import { getListByKey, setListByKey } from "../services/storage";
 
 export default function MovieDetail() {
-  const { id } = useParams();
+  const { type, id } = useParams();
 
   const [movieData, setMovieData] = useState(null);
   const [movieTrailer, setMovieTrailer] = useState("");
@@ -13,9 +13,9 @@ export default function MovieDetail() {
 
   async function fetchData() {
     const [movieData, videoData, castData] = await Promise.all([
-      tmdbApi(`/movie/${id}`),
-      tmdbApi(`/movie/${id}/videos`),
-      tmdbApi(`/movie/${id}/credits`),
+      tmdbApi(`/${type}/${id}`),
+      tmdbApi(`/${type}/${id}/videos`),
+      tmdbApi(`/${type}/${id}/credits`),
     ]);
 
     setMovieData(movieData);

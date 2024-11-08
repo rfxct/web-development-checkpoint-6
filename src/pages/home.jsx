@@ -54,14 +54,14 @@ export default function Home() {
       </Section>
 
       <Section title="Novidades">
-        {upcomingMovies.map((filme) => (
-          <MovieCard key={filme.id} {...filme} />
+        {upcomingMovies.map((movie) => (
+          <MovieCard key={movie.id} {...movie} />
         ))}
       </Section>
 
       <Section title="Séries populares">
         {tvShows.map((show) => (
-          <MovieCard key={show.id} {...show} />
+          <MovieCard key={show.id} {...show} type={"tv"} />
         ))}
       </Section>
     </section>

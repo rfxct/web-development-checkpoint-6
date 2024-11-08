@@ -8,6 +8,7 @@ export default function MovieCard({
   overview,
   poster_path,
   detail,
+  type,
 }) {
   const resolvedName = title ?? name;
 
@@ -27,7 +28,7 @@ export default function MovieCard({
           </h2>
           {detail && <p>{overview.slice(0, 157).padEnd(160, ".")}</p>}
           <Link
-            to={`/movies/${id}`}
+            to={`/${type ?? "movie"}/${id}`}
             className="text-blue-500 hover:text-blue-700 font-semibold text-center block"
           >
             Ver mais »
