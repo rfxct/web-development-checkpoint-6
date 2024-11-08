@@ -23,7 +23,7 @@ export default function MovieCard({
 
         <div className="p-3">
           <h2 className="font-bold text-md mb-2 text-center">
-            {resolvedName} {overview && ` (⭐️ ${vote_average.toFixed(1)})`}
+            {resolvedName} {` (⭐️ ${vote_average.toFixed(1)})`}
           </h2>
           {detail && <p>{overview.slice(0, 157).padEnd(160, ".")}</p>}
           <Link
